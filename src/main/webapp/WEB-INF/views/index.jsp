@@ -3,13 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Student Manager Home</title>
 </head>
-<body>
+<body class="p-3 mb-2 bg-dark text-white"></div>
     <div align="center">
-        <h1>Student List</h1>
-        <h3> <a href="new">New Student</a> </h3>
-        <table border="1" cellpadding="5">
+        <h1 class="display-1">Student List</h1>
+        <h3> <a href="new" class="btn btn-success btn-lg" role="button">Create New Student</a> </h3>
+        <table class="table table-dark table-striped" border="1" cellpadding="5">
             <tr>
                 <th>ID</th>
                 <th>Name</th>
@@ -28,10 +29,12 @@
                             ${student.student_email}
                     </td>
                     <td>
-                        <a href="edit?student_id=${student.student_id}">Edit</a>
+                        <div class="d-grid gap-2 d-md-block">
+                        <a class="btn btn-warning btn-sm" href="edit?student_id=${student.student_id}" role="button">Edit</a>
                         &nbsp;&nbsp;
-                        <a href="delete?student_id=${student.student_id}">Delete</a>
-                    </td>
+                        <a class="btn btn-danger btn-sm" href="delete?student_id=${student.student_id}" role="button">Delete</a>
+                            </div>
+                       </td>
                 </tr>
             </c:forEach>
         </table>
